@@ -26,9 +26,12 @@ dependencies {
 
 tasks {
     withType<Test> { useJUnitPlatform() }
+    jar {
+        manifest {
+            attributes("Automatic-Module-Name" to "net.minestom.dependency.getter")
+        }
+    }
 }
 
 val compileKotlin: org.jetbrains.kotlin.gradle.tasks.KotlinCompile by tasks
 compileKotlin.kotlinOptions.jvmTarget = JavaVersion.VERSION_16.toString()
-
-applyJarMetadata("net.minestom.dependency.getter")
