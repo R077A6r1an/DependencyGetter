@@ -30,3 +30,5 @@ tasks {
 
 val compileKotlin: org.jetbrains.kotlin.gradle.tasks.KotlinCompile by tasks
 compileKotlin.kotlinOptions.jvmTarget = JavaVersion.VERSION_16.toString()
+
+applyJarMetadata("net.minestom.dependency.getter")
