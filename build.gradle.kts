@@ -3,12 +3,36 @@ plugins {
     id("org.jetbrains.kotlin.jvm") version "1.5.31"
 
     java
+    `maven-publish`
 }
 group = "net.minestom"
 version = "1.0.0"
 
 repositories {
     mavenCentral()
+}
+
+allprojects {
+    apply(plugin = "java")
+
+    group = "net.minestom"
+    version = "v1.0.0"
+    description = "Dependency getter"
+
+    repositories {
+        mavenCentral()
+        maven(url = "https://jitpack.io")
+    }
+
+    java {
+
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    tasks.withType<JavaCompile> {
+        options.encoding = "UTF-8"
+    }
 }
 
 dependencies {
