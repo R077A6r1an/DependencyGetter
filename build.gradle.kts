@@ -16,18 +16,12 @@ allprojects {
     apply(plugin = "java")
 
     group = "net.minestom"
-    version = "v1.0.0"
+    version = "1.0.0"
     description = "Dependency getter"
 
     repositories {
         mavenCentral()
         maven(url = "https://jitpack.io")
-    }
-
-    java {
-
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
     }
 
     tasks.withType<JavaCompile> {
